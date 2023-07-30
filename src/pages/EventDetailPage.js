@@ -19,7 +19,7 @@ const EventDetailPage =() => {
 export default EventDetailPage;
 //-----------------------------------------------------------------------NEW
 async function loadEvent(id) {
-const response = await fetch('http://localhost:8080/events/' + id);
+const response = await fetch('https://events-manager-api-e67f.onrender.com/events/' + id);
 if (!response.ok) {
 
     throw json({message: 'could not fetch details for selected event'} , {status : 500}) ;
@@ -30,7 +30,7 @@ if (!response.ok) {
 }
 //----------------------------------------------------- NEW
 async function loadeEvents() {
-    const response = await fetch('http://localhost:8080/events');
+    const response = await fetch('https://events-manager-api-e67f.onrender.com/events');
     if (!response.ok) {
         throw json({message: 'could not fetch events'} , {status : 500}) ;
     } else {
@@ -51,7 +51,7 @@ export const loader = async ({request , params})=>{
 export const action = async ({params , request})=>{
     const id = params.eveID ;
     const token = getAuthToken() ;
-    const response = await fetch('http://localhost:8080/events/' + id , {method : request.method , headers : {'Authorization': 'Bearer ' + token}});
+    const response = await fetch('https://events-manager-api-e67f.onrender.com/events/' + id , {method : request.method , headers : {'Authorization': 'Bearer ' + token}});
     if (!response.ok) {
 
         throw json({message: 'could not delete event'} , {status : 500}) ;

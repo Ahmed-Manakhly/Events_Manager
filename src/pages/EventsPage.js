@@ -15,7 +15,7 @@ function EventsPage() {
 export default EventsPage;
 //---------------------------------------------------------------------------------
 async function loadeEvents() {
-    const response = await fetch('http://localhost:8080/events');
+    const response = await fetch('https://events-manager-api-e67f.onrender.com/events');
     if (!response.ok) {
         throw json({message: 'could not fetch events'} , {status : 500}) ;
     } else {

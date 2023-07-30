@@ -49,8 +49,9 @@ export default EventForm;
 //-------------------------------
 export const action = async ({request , params})=>{
   const method = request.method ;
-  let url = 'http://localhost:8080/events' ;
-  if(method === 'PATCH') {const id = params.eveID ; url = 'http://localhost:8080/events/'+id ;}
+  // let url = 'https://events-manager-api-e67f.onrender.com/events' ;
+  let url = 'https://events-manager-api-e67f.onrender.com/events' ;
+  if(method === 'PATCH') {const id = params.eveID ; url = 'https://events-manager-api-e67f.onrender.com/events/'+id ;}
   //------------------------------------------
   const data = await request.formData();
   //---------------------------------------
